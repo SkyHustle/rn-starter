@@ -13,9 +13,10 @@ const ListScreen = () => {
   return(
     <FlatList
       data={friends}
+      keyExtractor={(friend) => friend.name }
       renderItem={( {item} ) => {
         return (
-          <Text key={item.name}>{item.name}</Text>
+          <Text>{item.name}</Text>
         );
       }}
     />
