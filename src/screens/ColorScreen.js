@@ -12,6 +12,12 @@ const ColorScreen = () => {
           setColors([...colors, randomRgb()]);
         }}
       />
+      <Button
+        title='Remove A Color'
+        onPress={() => {
+          setColors([...colors.slice(0, colors.length - 1)]);
+        }}
+      />
       <FlatList
         keyExtractor={(item) => item }
         data={colors}
