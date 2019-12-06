@@ -1,43 +1,42 @@
 import React, { useState } from 'react';
 import { StyleSheet, View, Button, Text } from 'react-native';
+import CustomColor from '../components/CustomColor';
 
 const CustomColorScreen = () => {
-  const [color, adjustColor] = useState({red: 0, green: 0, blue: 0});
+  const [red, setRed] = useState(0)
+  const [green, setGreen] = useState(0)
+  const [blue, setBlue] = useState(0)
 
   return(
     <View>
-      <Button
-        title='More Red'
-        onPress={() => {
-          adjustColor(handleRed(color, 'more'));
-        }}
+      <CustomColor
+        color='Red'
+        onIncrease={() => setRed(red + 10)}
+        onDecrease={() => setRed(red - 10)}
       />
-      <Button
-        title='Less Red'
-        onPress={() => {
-          adjustColor(handleRed(color, 'less'));
-        }}
+      <CustomColor
+        color='Green'
+        onIncrease={() => setGreen(green + 10)}
+        onDecrease={() => setGreen(green - 10)}
       />
-      <Text style={{textAlign: 'center', fontSize: 20}}>{`rgb(${color.red.toString()}, ${color.green.toString()}, ${color.blue.toString()})`}</Text>
+      <CustomColor
+        color='Blue'
+        onIncrease={() => setBlue(blue + 10)}
+        onDecrease={() => setBlue(blue - 10)}
+      />
+
+      <Text style={{textAlign: 'center', fontSize: 20}}>{`rgb(${red}, ${green}, ${blue})`}</Text>
+
       <View style={{
         height: 100,
         width: 100,
         borderWidth: 2,
-        backgroundColor: `rgb(${color.red.toString()}, ${color.green.toString()}, ${color.blue.toString()})`
+        backgroundColor: `rgb(${red}, ${green}, ${blue})`
       }} />
     </View>
   );
 };
 
-const handleRed = (color, adjustment) => {
-  let updatedColor = color
-
-  if (adjustment === 'more') {
-    return updatedColor = {red: updatedColor.red + 20, green: 0, blue: 0}
-  } else if (adjustment === 'less') {
-    return updatedColor = {red: updatedColor.red - 20, green: 0, blue: 0}
-  }
-}
 
 
 export default CustomColorScreen;
