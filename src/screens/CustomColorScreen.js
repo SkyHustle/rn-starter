@@ -10,12 +10,20 @@ const CustomColorScreen = () => {
   const [blue, setBlue] = useState(0)
 
   const setColor = (color, change) => {
-    if(color === 'red') {
-      if(red + change > 255 || red + change < 0) {
-        return;
-      } else {
-        setRed(red + change);
-      }
+    // Less Boss
+    // if(color === 'red') {
+    //   if(red + change > 255 || red + change < 0) {
+    //     return;
+    //   } else {
+    //     setRed(red + change);
+    //   }
+    // }
+
+    // More Boss
+    switch (color) {
+      case 'red':
+        red + change > 255 || red + change < 0 ? null : setRed(red + change);
+      return;
     }
   };
 
