@@ -9,12 +9,22 @@ const CustomColorScreen = () => {
   const [green, setGreen] = useState(0)
   const [blue, setBlue] = useState(0)
 
+  const setColor = (color, change) => {
+    if(color === 'red') {
+      if(red + change > 255 || red + change < 0) {
+        return;
+      } else {
+        setRed(red + change);
+      }
+    }
+  };
+
   return(
     <View>
       <CustomColor
         color='Red'
-        onIncrease={() => setRed(red + COLOR_INCREMENT)}
-        onDecrease={() => setRed(red - COLOR_INCREMENT)}
+        onIncrease={() => setColor('red', COLOR_INCREMENT)}
+        onDecrease={() => setColor('red', -1 * COLOR_INCREMENT)}
       />
       <CustomColor
         color='Green'
