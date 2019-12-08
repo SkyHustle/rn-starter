@@ -7,6 +7,8 @@ const reducer = (state, action) => {
   console.log(action)
   switch (action.type) {
     case 'increase_count':
+      return {...state, count: state.count + action.payload};
+    case 'decrease_count':
       return {...state, count: state.count + action.payload}
     default:
       return state
