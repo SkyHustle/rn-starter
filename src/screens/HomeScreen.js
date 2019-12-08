@@ -29,6 +29,10 @@ const HomeScreen = ({ navigation }) => {
         title="Custom Color Screen"
         onPress={() =>  navigation.navigate('CustomColor')}
       />
+      <Button
+        title="Counter Using Reducer"
+        onPress={() =>  navigation.navigate('CounterReducer')}
+      />
     </View>
   );
 };
