@@ -1,23 +1,22 @@
 import React, {useReducer} from 'react';
-import {StyleSheet, View, Text, Button} from 'react-native';
+import { View, Text, Button} from 'react-native';
 
 const reducer = (state, action) => {
-  // state = {count:0}
-  //action = {type: increase_count || decrease_count, payload: number}
-  console.log(action)
+  // state = { count:0 }
+  //action = { type: increase_count || decrease_count, payload: number }
   switch (action.type) {
     case 'increase_count':
-      return {...state, count: state.count + action.payload};
+      return { ...state, count: state.count + action.payload };
     case 'decrease_count':
-      return {...state, count: state.count + action.payload}
+      return { ...state, count: state.count - action.payload };
     default:
-      return state
+      return state;
   };
 };
 
 const CounterScreenReducer = () => {
-  const [state, dispatch] = useReducer(reducer, {count:0})
-  const {count} = state
+  const [state, dispatch] = useReducer(reducer, { count:0 });
+  const { count } = state
 
   return(
     <View>
@@ -27,7 +26,7 @@ const CounterScreenReducer = () => {
       />
       <Button
         title='Decrease'
-        onPress={() => { dispatch({ type:'decrease_count', payload: -1}) }}
+        onPress={() => { dispatch({ type:'decrease_count', payload: 1}) }}
       />
       <Text style={{textAlign: 'center'}}>Current Count: {count}</Text>
     </View>
