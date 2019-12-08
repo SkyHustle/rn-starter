@@ -5,6 +5,12 @@ const reducer = (state, action) => {
   // state = {count:0}
   //action = {type: increase_count || decrease_count, payload: number}
   console.log(action)
+  switch (action.type) {
+    case 'increase_count':
+      return {...state, count: state.count + action.payload}
+    default:
+      return state
+  };
 };
 
 const CounterScreenReducer = () => {
@@ -18,9 +24,9 @@ const CounterScreenReducer = () => {
       />
       <Button
         title='Decrease'
-        onPress={() => {console.log('Decrease')}}
+        onPress={() => { dispatch({ type:'decrease_count', payload: -1}) }}
       />
-      <Text style={{textAlign: 'center'}}>Current Count:</Text>
+      <Text style={{textAlign: 'center'}}>Current Count: {state.count}</Text>
     </View>
   );
 };
