@@ -5,9 +5,7 @@ const TextScreen = () => {
   const [password, setPassword] = useState('');
 
   const validatePassword = () => {
-    if (password.length < 6) {
-      return 'Password must be longer than 5 characters';
-    }
+    return password.length < 6 ? <Text>Password must be longer than 5 characters</Text> : null
   }
 
   return(
@@ -20,8 +18,7 @@ const TextScreen = () => {
         value={password}
         onChangeText={(newValue) => setPassword(newValue)}
       />
-      <Text>{validatePassword()}</Text>
-      <Text>{password}</Text>
+      {validatePassword()}
     </View>
   );
 };
