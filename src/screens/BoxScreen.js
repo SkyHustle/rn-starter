@@ -15,7 +15,9 @@ const styles = StyleSheet.create({
   viewStyle: {
     borderWidth: 3,
     borderColor: 'black',
-    flexDirection: 'row',
+    // flexDirection: 'row',
+    // justifyContent: 'space-between',
+    // alignItems: 'flex-start',
     height: 200
   },
   redStyle: {
@@ -26,7 +28,8 @@ const styles = StyleSheet.create({
   greenStyle: {
     borderWidth: 3,
     borderColor: 'green',
-    margin: 5
+    margin: 5,
+    flex: 1
   },
   blueStyle: {
     borderWidth: 3,
