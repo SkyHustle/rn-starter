@@ -13,12 +13,12 @@ const BoxScreen = () => {
 
 const styles = StyleSheet.create({
   viewStyle: {
-    borderWidth: 3,
-    borderColor: 'black',
-    // flexDirection: 'row',
+    borderWidth: 10,
+    borderColor: 'purple',
+    flexDirection: 'row',
     // justifyContent: 'space-between',
-    // alignItems: 'flex-start',
-    height: 200
+    alignItems: 'flex-start',
+    height: '100%'
   },
   redStyle: {
     borderWidth: 3,
@@ -30,7 +30,8 @@ const styles = StyleSheet.create({
     borderColor: 'green',
     margin: 5,
     // flex: 1,
-    alignSelf: 'flex-start'
+    alignSelf: 'flex-start',
+    // ...StyleSheet.absoluteFillObject
   },
   blueStyle: {
     borderWidth: 3,
