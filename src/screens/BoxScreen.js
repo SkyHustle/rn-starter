@@ -29,7 +29,8 @@ const styles = StyleSheet.create({
     borderWidth: 3,
     borderColor: 'green',
     margin: 5,
-    flex: 1
+    // flex: 1,
+    alignSelf: 'flex-start'
   },
   blueStyle: {
     borderWidth: 3,
