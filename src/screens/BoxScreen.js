@@ -3,7 +3,7 @@ import { StyleSheet, View, Text } from 'react-native';
 
 const BoxScreen = () => {
   return(
-    <View style={styles.viewStyle}>
+    <View style={styles.parentStyle}>
       <Text style={styles.redStyle}>Child #1</Text>
       <Text style={styles.greenStyle}>Child #2</Text>
       <Text style={styles.blueStyle}>Child #3</Text>
@@ -12,7 +12,7 @@ const BoxScreen = () => {
 };
 
 const styles = StyleSheet.create({
-  viewStyle: {
+  parentStyle: {
     borderWidth: 10,
     borderColor: 'purple',
     flexDirection: 'row',
